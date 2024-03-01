@@ -12,11 +12,11 @@ public class AbstractService<E, R extends JpaRepository<E, Long>> {
    /* @Autowired
     AbstractConvertor convertor;*/
 
-    public E add(E e) throws Exception {
+  /*  public E add(E e) throws Exception {
         return repository.save(e);
     }
 
     public E read(Long id) throws Exception {
         return repository.findById(id).get();
-    }
+    }*/
 }

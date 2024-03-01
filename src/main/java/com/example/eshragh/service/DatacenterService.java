@@ -1,46 +1,56 @@
 package com.example.eshragh.service;
 
+import com.example.eshragh.model.dtos.DatacenterDto;
 import com.example.eshragh.model.entities.DatacenterEntity;
+import com.example.eshragh.model.srv.DatacenterSrv;
 import com.example.eshragh.repository.DatacenterRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
 public class DatacenterService extends AbstractService<DatacenterEntity, DatacenterRepository> {
-    @Override
-    public DatacenterEntity read(Long id) throws Exception {
-        /*repository.findById(id)
-                .ifPresentOrElse(
-                        datacenterEntity -> {
-                            // Entity found, do something with it
-                        },
-                        () -> {
-                            throw new EntityNotFoundException("DatacenterEntity not found with id: " + id);
-                        }
-                );*/
-
-        return super.read(id);
+    public DatacenterEntity add(DatacenterEntity datacenterEntity) {
+        return repository.save(datacenterEntity);
     }
 
-    /*public DatacenterEntity read(Long id){
-            Optional<DatacenterEntity> datacenterOptional = repository.findById(id);
-            return datacenterOptional.orElse(null);
-        }*/
-    public DatacenterEntity updateDatacenter(Long id,DatacenterEntity c) throws Exception {
+    public DatacenterEntity read(Long id) throws Exception {
 
-            DatacenterEntity currentDatacenter = repository.findById(id).get();
+        return repository.findById(id).get();
+    }
+
+
+    public DatacenterEntity updateDatacenter(Long id, DatacenterEntity c) throws Exception {
+
+        DatacenterEntity currentDatacenter = repository.findById(id).get();
 //            if (c.getId()!=null){
 //                throw new Exception();
 //            }
-            if (c.getDatacenterName() != null) {
-                currentDatacenter.setDatacenterName(c.getDatacenterName());
-            }
-            if (c.getUnits() != null) {
-                currentDatacenter.setUnits(c.getUnits());
-            }
-            return repository.save(currentDatacenter);
+        if (c.getDatacenterName() != null) {
+            currentDatacenter.setDatacenterName(c.getDatacenterName());
+        }
+        if (c.getUnits() != null) {
+            currentDatacenter.setUnits(c.getUnits());
+        }
+        return repository.save(currentDatacenter);
+
+    }
+
+    public List<DatacenterEntity> getAll() {
+
+        return repository.findAll();
+    }
+
+    public List<DatacenterEntity> getAllWithPagination(int pageNum) {
+
+        return repository.findAll(Pageable.ofSize(2).withPage(pageNum)).getContent();
+    }
+
+    public void deleteById(Long id) {
+        repository.delete(repository.findById(id).get());
 
     }
 }

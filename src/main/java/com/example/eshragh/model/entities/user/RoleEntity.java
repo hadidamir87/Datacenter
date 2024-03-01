@@ -1,4 +1,23 @@
 package com.example.eshragh.model.entities.user;
 
-public class RoleEntity {
+import com.example.eshragh.model.entities.BaseEntity;
+import jakarta.persistence.Entity;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
+import lombok.*;
+
+import java.util.List;
+
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Getter
+@Setter
+public class RoleEntity extends BaseEntity {
+    private String title;
+    @OneToOne
+    private UserEntity userEntity;
+    @ManyToMany
+    private List<Privileges> privileges;
 }
