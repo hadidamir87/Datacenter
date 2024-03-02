@@ -10,4 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class RoleSrv {
+    private Long Id;
+
+    private String title;
 }

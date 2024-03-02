@@ -14,6 +14,6 @@ import java.util.List;
 @Setter
 public class Privileges extends BaseEntity {
     private String action;
-    @ManyToMany
-    private List<RoleEntity> roleEntities;
+   /* @ManyToMany
+    private List<RoleEntity> roleEntities;*/
 }

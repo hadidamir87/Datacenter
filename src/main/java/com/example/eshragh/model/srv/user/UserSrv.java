@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class UserSrv {
-
+    private Long Id;
+    private String username;
 }

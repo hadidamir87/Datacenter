@@ -1,14 +1,14 @@
 package com.example.eshragh.service;
 
 
-import com.example.eshragh.model.convertor.AbstractConvertor;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.http.ResponseEntity;
+
 
 public class AbstractService<E, R extends JpaRepository<E, Long>> {
     @Autowired
-    R repository;
+   public R repository;
    /* @Autowired
     AbstractConvertor convertor;*/
 

@@ -10,4 +10,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class PrivilegesSrv {
+    private Long Id;
+    private String action;
+
 }

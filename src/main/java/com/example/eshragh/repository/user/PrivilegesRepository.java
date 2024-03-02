@@ -1,4 +1,7 @@
 package com.example.eshragh.repository.user;
 
-public interface PrivilegesRepository {
+import com.example.eshragh.model.entities.user.Privileges;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PrivilegesRepository extends JpaRepository<Privileges, Long> {
 }

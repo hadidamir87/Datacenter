@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class PortSrv {
+    private Long id;
+
     private Integer portNumber;
     private PortEntity connectedPort;
 

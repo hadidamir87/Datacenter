@@ -11,6 +11,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @Data
 public class ServerSrv {
+    private Long id;
+
     private String serverName;
     private Integer units;
     private RackEntity rack;
