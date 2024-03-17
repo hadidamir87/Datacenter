@@ -10,14 +10,13 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Getter
 @Setter
-public class DatacenterEntity extends BaseEntity {
+public class DataCenterEntity extends BaseEntity {
 
     private String datacenterName;
     private Integer units;
 
-        @OneToMany(mappedBy = "dataCenter")
+    @OneToMany(mappedBy = "dataCenter")
     private List<RackEntity> racks;
 }

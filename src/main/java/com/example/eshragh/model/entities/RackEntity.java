@@ -21,7 +21,7 @@ public class RackEntity extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "datacenter_id")
-    private DatacenterEntity dataCenter;
+    private DataCenterEntity dataCenter;
 
     @OneToMany
     @JoinColumn(name = "server_id")

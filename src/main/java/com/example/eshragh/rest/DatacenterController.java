@@ -1,7 +1,7 @@
 package com.example.eshragh.rest;
 
 import com.example.eshragh.model.dtos.DatacenterDto;
-import com.example.eshragh.model.entities.DatacenterEntity;
+import com.example.eshragh.model.entities.DataCenterEntity;
 import com.example.eshragh.model.srv.DatacenterSrv;
 import com.example.eshragh.repository.DatacenterRepository;
 import com.example.eshragh.service.DatacenterService;
@@ -13,9 +13,9 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/datacenter")
-public class DatacenterController extends AbstractController<DatacenterEntity, DatacenterDto, DatacenterSrv, DatacenterService> {
+public class DatacenterController extends AbstractController<DataCenterEntity, DatacenterDto, DatacenterSrv, DatacenterService> {
     @Autowired
-    DatacenterRepository datacenterRepository;
+    private DatacenterRepository datacenterRepository;
 
     @PostMapping("/create")
     public DatacenterSrv create(@RequestBody DatacenterDto datacenterDto) throws Exception {

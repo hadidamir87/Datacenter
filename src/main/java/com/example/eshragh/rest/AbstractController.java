@@ -13,10 +13,10 @@ import java.util.concurrent.CompletableFuture;
 
 public class AbstractController<E, Dto, Srv, S extends AbstractService<E, ? extends JpaRepository<E, Long>>> {
     @Autowired
-    public S service;
+    protected S service;
 
     @Autowired
-    public AbstractConvertor<E, Dto, Srv> convertor;
+    protected AbstractConvertor<E, Dto, Srv> convertor;
 
 
 

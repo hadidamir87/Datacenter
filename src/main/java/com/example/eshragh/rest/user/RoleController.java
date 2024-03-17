@@ -72,6 +72,14 @@ public class RoleController extends AbstractController<RoleEntity, RoleDto, Role
         return convertor.entityCollectionConvertor(service.getAllWithPagination(pageIndex));
     }
 
+  /*  @Autowired
+    private RoleService roleService;*/
+
+    @GetMapping("/roles/{roleId}/privilegeIds")
+    public List<Long> getPrivilegeIdsByRoleId(@PathVariable Long roleId) {
+        return service.getPrivilegeIdsByRoleId(roleId);
+    }
+
     @PutMapping("/{id}")
     public RoleSrv update(@PathVariable Long id, @RequestBody RoleDto roleDto) throws Exception {
 

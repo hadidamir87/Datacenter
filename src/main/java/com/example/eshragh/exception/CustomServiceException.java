@@ -1,12 +1,14 @@
-/*
 package com.example.eshragh.exception;
 
+import lombok.Data;
 import lombok.Getter;
 
-@Getter
+@Data
 public class CustomServiceException extends Exception {
     private String errorCode;
+    public CustomServiceException(){
 
+    }
     public CustomServiceException(String errorCode) {
         this.errorCode = errorCode;
     }
@@ -30,5 +32,5 @@ public class CustomServiceException extends Exception {
         super(message, cause, enableSuppression, writableStackTrace);
         this.errorCode = errorCode;
     }
+
 }
-*/
