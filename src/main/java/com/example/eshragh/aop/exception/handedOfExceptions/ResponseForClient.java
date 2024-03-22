@@ -1,4 +1,4 @@
-package com.example.eshragh.exception.handedOfExceptions;
+package com.example.eshragh.aop.exception.handedOfExceptions;
 
 import lombok.Data;
 

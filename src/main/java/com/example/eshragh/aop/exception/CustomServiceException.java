@@ -1,4 +1,4 @@
-package com.example.eshragh.exception;
+package com.example.eshragh.aop.exception;
 
 import lombok.Data;
 import lombok.Getter;

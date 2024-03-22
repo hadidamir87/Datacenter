@@ -1,19 +1,16 @@
 package com.example.eshragh.service.user;
 
 import com.example.eshragh.configuration.jwt.JwtService;
-import com.example.eshragh.exception.CustomServiceException;
+import com.example.eshragh.aop.exception.CustomServiceException;
 import com.example.eshragh.model.dtos.user.LoginDto;
 import com.example.eshragh.model.entities.user.RoleEntity;
 import com.example.eshragh.model.entities.user.UserEntity;
 import com.example.eshragh.model.srv.user.AuthenticationResponse;
-import com.example.eshragh.model.srv.user.UserSrv;
 import com.example.eshragh.repository.user.RoleRepository;
 import com.example.eshragh.repository.user.UserRepository;
 import com.example.eshragh.service.AbstractService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
-import org.apache.catalina.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -25,7 +22,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 

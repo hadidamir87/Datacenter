@@ -1,29 +1,23 @@
 package com.example.eshragh.rest.user;
 
 
-import com.example.eshragh.exception.CustomServiceException;
-import com.example.eshragh.model.convertor.AbstractConvertor;
+import com.example.eshragh.aop.exception.CustomServiceException;
 import com.example.eshragh.model.dtos.user.UserDto;
-import com.example.eshragh.model.entities.user.RoleEntity;
 import com.example.eshragh.model.entities.user.UserEntity;
-import com.example.eshragh.model.srv.user.RoleSrv;
 import com.example.eshragh.model.srv.user.UserSrv;
 import com.example.eshragh.rest.AbstractController;
 import com.example.eshragh.service.user.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/user")
 public class UserController extends AbstractController<UserEntity, UserDto, UserSrv, UserService> {
 
     @GetMapping("/get/{id}")
-    @PreAuthorize("hasAuthority('ROLE_3')")
+    @PreAuthorize("hasAuthority('ROLE_1')")
 //    @PreAuthorize("hasPermission('ROLE_Admin')")
     public UserSrv findById(@PathVariable Long id) throws CustomServiceException {
         return  convertor.convertToSrv(service.findById(id));

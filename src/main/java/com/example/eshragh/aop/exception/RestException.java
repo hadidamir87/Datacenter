@@ -1,7 +1,7 @@
-package com.example.eshragh.exception;
+package com.example.eshragh.aop.exception;
 
 
-import com.example.eshragh.exception.handedOfExceptions.ResponseForClient;
+import com.example.eshragh.aop.exception.handedOfExceptions.ResponseForClient;
 import jakarta.annotation.PostConstruct;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
